@@ -32,20 +32,29 @@ const cuentaPacienteValida = () => {
 const accessoPacienteValido = () => {
     let warnings = "";
     parrafo.innerHTML = "";
-    esValida = false;
+    esUsuarioValido = false;
+    esContraseniaValida = false;
     for (let i = 0; i < cuentasPacientes.length; i++) {
         cuenta = cuentasPacientes[i];
-        if (
-            cuenta.usuario.localeCompare(usuarioPacienteLogin.value.toLowerCase()) == 0 &&
-            cuenta.password.localeCompare(passPacienteLogin.value) == 0
-        ) {
-            esValida = true;
+        if (cuenta.usuario.localeCompare(usuarioPacienteLogin.value.toLowerCase()) == 0) {
+            esUsuarioValido = true;
+        }
+        if (cuenta.password.localeCompare(passPacienteLogin.value) == 0) {
+            esContraseniaValida = true;
+        }
+        if (!esUsuarioValido && !esContraseniaValida) {
+            return "El usuario y la contraseña son invalidos"
+        }
+        if (!esUsuarioValido) {
+            return "El usuario es invalido";
+        }
+        if (!esContraseniaValida) {
+            return "La contraseña es invalida";
         }
     }
-    warnings = esValida ? "" : "El usuario y la contraseña no coinciden";
-
     return warnings;
 };
+
 
 const accessoMedicoValido = () => {
     let warnings = "";
