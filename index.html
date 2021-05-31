@@ -22,10 +22,60 @@
                     <input type="text" name="" id="name"> <span class="barra"></span>
                     <label for="">Nombre</label>
                 </div>
+                
+                <div class="grupo">
+                    <input type="text" name="" id="apellido" > <span class="barra"></span>
+                    <label for="">Apellido</label>
+                </div>
                 <div class="grupo">
                     <input type="email" name="" id="email" > <span class="barra"></span>
                     <label for="">Correo electrónico</label>
                 </div>
+                <div class="grupo">
+                    <input type="text" name="" id="usuario" > <span class="barra"></span>
+                    <label for="">Usuario</label>
+                </div>
+                <div class="grupo">
+                    <input type="date" name="" id="fechaNac" > <span class="barra"></span>
+                    <label for="">Fecha de nacimiento</label>
+                </div>
+
+                <div class="grupo">
+                    <input type="text" name="" id="dni" > <span class="barra"></span>
+                    <label for="">D.N.I.</label>
+                </div>
+
+                <div class="grupo">
+                    <select id="prestadorCobertura" onchange="carg(this,'tipoCobertura');">
+                        <option value="" selected></option>
+                        <option value="Galeno" >Galeno</option>
+                        <option value="Swift" >Swift</option>
+                        <option value="Pami">Pami</option>
+                    </select> <span class="barra"></span>
+                    <label for="">Prestador de cobertura</label>
+                </div>
+
+                <div class="grupo">
+                    <input type="text" name="" id="tipoCobertura" disabled > <span class="barra"></span>
+                    <label for="">Tipo de cobertura</label>
+                </div>
+
+                <div class="grupo">
+                    <select id="medioDePago" onchange="carg(this,'nroCuenta');">
+                        <option value="" selected></option>
+                        <option value="Credito/Débito" >Credito/Débito</option>
+                        <option value="MercadoPago" >MercadoPago</option>
+                        <option value="Transferencia">Transferencia</option>
+                    </select> <span class="barra"></span>
+                    <label for="">Medio de Pago</label>
+                </div>
+
+                <div class="grupo">
+                    <input type="text" name="" id="nroCuenta" disabled > <span class="barra"></span>
+                    <label for="">Numero de cuenta</label>
+                </div>
+                
+                
                 <div class="grupo">
                     <input type="password" name="" id="password"> <span class="barra"></span>
                     <label for="">Contraseña</label>
@@ -71,7 +121,9 @@
         </div>
     </form>
 
-
-    <script src="validacion.js"></script>
+    <script src="src/doms.js"></script>
+    <script src="src/auxiliares.js"></script>
+    <script src="src/validacion.js"></script>
+    <script src="src/main.js"></script>
 </body>
 </html>
