@@ -36,7 +36,7 @@ const accessoPacienteValido = () => {
     for (let i = 0; i < cuentasPacientes.length; i++) {
         cuenta = cuentasPacientes[i];
         if (
-            cuenta.usuario.localeCompare(usuarioPacienteLogin.value) == 0 &&
+            cuenta.usuario.localeCompare(usuarioPacienteLogin.value.toLowerCase()) == 0 &&
             cuenta.password.localeCompare(passPacienteLogin.value) == 0
         ) {
             esValida = true;
@@ -55,6 +55,7 @@ const accessoMedicoValido = () => {
         cuenta = cuentasMedicos[i];
         if (
             cuenta.legajo.localeCompare(legajoMedico.value) == 0 &&
+            esMedicoValido(legajo.value) &&
             cuenta.password.localeCompare(passMedico.value) == 0
         ) {
             esValida = true;

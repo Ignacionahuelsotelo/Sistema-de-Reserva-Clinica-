@@ -1,6 +1,6 @@
-crearCuentaPaciente("Holaaaaaa", "chau@gmail.com", "1234567");
+crearCuentaPaciente("Seltron", "chau@gmail.com", "1234567");
 
-crearCuentaMedico("123-456-789", "1234567");
+crearCuentaMedico("123456789", "1234567");
 
 form.addEventListener("submit", (e) => {
     e.preventDefault();

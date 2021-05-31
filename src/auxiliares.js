@@ -18,7 +18,7 @@ crearCuentaPaciente = () => {
     cuentasPacientes.push({
         nombre: nombre.value,
         apellido: apellido.value,
-        usuario: usuario.value,
+        usuario: usuario.value.toLowerCase(),
         dni: dni.value,
         fechaNac: fechaNacimiento.value,
         mail: email.value,
@@ -33,7 +33,7 @@ crearCuentaPaciente = () => {
 crearCuentaPaciente = (user, mail, password) => {
     //cambiando un poco los nombres para que no se parezcan a los del dom
     cuentasPacientes.push({
-        usuario: user,
+        usuario: user.toLowerCase(),
         mail: mail,
         password: password,
     });
@@ -60,9 +60,18 @@ cambiarVisibilidad = (formulario, visible) => {
 const existeUsuario = (user) => {
     existe = false;
     for (cuenta in cuentasPacientes) {
-        if (cuenta.usuario == user) {
+        if (cuenta.usuario == user.toLowerCase) {
             return true;
         }
     }
     return false;
+};
+
+const esMedicoValido = (legajo) => {
+    existe = false;
+    if (legajo.length > 0) {
+        existe = true;
+    }
+
+    return existe;
 };
