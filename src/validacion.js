@@ -62,15 +62,16 @@ const accessoMedicoValido = () => {
     esValida = false;
     for (let i = 0; i < cuentasMedicos.length; i++) {
         cuenta = cuentasMedicos[i];
-        if (
-            cuenta.legajo.localeCompare(legajoMedico.value) == 0 &&
-            esMedicoValido(legajo.value) &&
-            cuenta.password.localeCompare(passMedico.value) == 0
-        ) {
-            esValida = true;
-        }
+		if (esLegajoInvalido(legajoMedico.value)){
+			return "El legajo ingresado es vacio";
+		}
+        if (cuenta.legajo.localeCompare(legajoMedico.value) != 0){
+			return "No hay cuentas existentes asociadas al legajo ingresado";
+		}
+		if (cuenta.legajo.localeCompare(legajoMedico.value) == 0 && cuenta.password.localeCompare(passMedico.value) != 0){
+			return "La contraseña es invalida";
+		}
+		
     }
-    warnings = esValida ? "" : "El usuario y la contraseña no coinciden";
-
     return warnings;
 };

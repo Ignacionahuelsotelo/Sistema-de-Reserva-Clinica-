@@ -67,9 +67,9 @@ const existeUsuario = (user) => {
     return false;
 };
 
-const esMedicoValido = (legajo) => {
+const esLegajoInvalido = (legajo) => {
     existe = false;
-    if (legajo.length > 0) {
+    if (legajo.length == 0) {
         existe = true;
     }
 
