@@ -63,7 +63,7 @@ const accessoMedicoValido = () => {
     for (let i = 0; i < cuentasMedicos.length; i++) {
         cuenta = cuentasMedicos[i];
 		if (esLegajoInvalido(legajoMedico.value)){
-			return "El legajo ingresado es vacio";
+			return "El legajo y la contraseña son invalidos";
 		}
         if (cuenta.legajo.localeCompare(legajoMedico.value) != 0){
 			return "No hay cuentas existentes asociadas al legajo ingresado";
