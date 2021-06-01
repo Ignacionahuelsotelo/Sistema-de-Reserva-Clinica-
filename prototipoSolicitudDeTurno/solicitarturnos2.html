@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang= "es">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+		<link rel="stylesheet" href="css/estilost.css">
+		<link rel="stylesheet" href="http://code.jquery.com/ui/1.10.1/themes/base/jquery-ui.css" />
+		<script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+		<script src="http://code.jquery.com/ui/1.10.1/jquery-ui.js"></script>
+		<script src="jquery.ui.datepicker-es.js"></script>
+	</head>
+	<body> 
+	<header class="header">
+		<h1 class="titulo">Solicitud de turnos</h1>
+			<div class="contenedor">
+				<h2 class= "seleccionar"> Especialidad
+				<select name="select">
+					<option value="value1" select>Seleccione especialidad</option>
+					<option value="value2" >Alergología</option>
+					<option value="value3"> Angiología</option>
+					<option value="value4"> Cardiología</option>
+					<option value="value5"> Endocrinología</option>
+					<option value="value6"> Estomatología</option>
+					<option value="value7"> Gastroenterología</option>
+					<option value="value8"> Geriatría</option>
+					<option value="value9"> Hematología</option>
+					<option value="value10"> Hepatología</option>
+					<option value="value11"> Infectología</option>
+					<option value="value12"> Medicina del trabajo</option>
+					<option value="value13"> Nefrología</option>
+					<option value="value14"> Neumología</option>
+					<option value="value15"> Neurología</option>
+					<option value="value16"> Nutriología</option>
+					<option value="value17"> Oncología</option>
+					<option value="value18"> Médicina Oncología radioterápica</option>
+					<option value="value19"> Pediatría</option>
+					<option value="value20"> Psiquiatría</option>
+					<option value="value21"> Reumatología</option>
+					<option value="value22"> Toxicología</option>
+					<option value="value23"> Cirugías estéticas</option>				
+				</select>
+				</h2>
+				</div>
+				<div class= "contenedor">
+				<script src= "js/fecha.js"></script>
+				<h3 class= seleccionarFecha> Seleccione fecha: 
+					<div id="datepicker"></div>
+				</h3>
+				<div class="contenedor">
+				<h4 class= seleccionarHorario> Seleccione horario: </h4>
+				<form action="" name="formulario">
+					<input type="time" name="hora" value="00:00:00" max="18:00:00" min="08:00:00" step="1">
+						<input type="submit" value="Guardar">
+				</form>
+				</div>
+		</header>
+	</body>
+</html>
+	
