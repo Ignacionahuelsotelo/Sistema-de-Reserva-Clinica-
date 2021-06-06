@@ -1,4 +1,4 @@
-crearCuentaPaciente2("Seltron", "chau@gmail.com", "1234567");
+crearCuentaPaciente2("Seltron06", "chau@gmail.com", "1234567");
 
 crearCuentaMedico("123456789", "1234567");
 
@@ -9,7 +9,6 @@ form.addEventListener("submit", (e) => {
         parrafo.innerHTML = warnings;
     } else {
         crearCuentaPaciente();
-        console.log(cuentasPacientes)
         cambiarVisibilidad(registro_form, false); // guarda tambien lo resetea
     }
 });
@@ -18,7 +17,7 @@ loginPaciente_form.addEventListener("submit", (e) => {
     e.preventDefault();
     let warnings = accessoPacienteValido();
     if (warnings.length != 0) {
-        window.alert(warnings);
+        parrafoPaciente.innerHTML = warnings;
     } else {
         window.alert("Ingreso exitoso");
         // crearCuentaPaciente();
@@ -30,7 +29,7 @@ loginMedico_form.addEventListener("submit", (e) => {
     e.preventDefault();
     let warnings = accessoMedicoValido();
     if (warnings.length != 0) {
-        window.alert(warnings);
+        parrafoMedico.innerHTML = warnings;
     } else {
         window.alert("Ingreso exitoso");
     }

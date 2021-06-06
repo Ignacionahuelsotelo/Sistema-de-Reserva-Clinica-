@@ -31,7 +31,7 @@ const cuentaPacienteValida = () => {
 
 const accessoPacienteValido = () => {
     let warnings = "";
-    parrafo.innerHTML = "";
+    parrafoPaciente.innerHTML = "";
     esUsuarioValido = false;
     esContraseniaValida = false;
     for (let i = 0; i < cuentasPacientes.length; i++) {
@@ -58,20 +58,20 @@ const accessoPacienteValido = () => {
 
 const accessoMedicoValido = () => {
     let warnings = "";
-    parrafo.innerHTML = "";
+    parrafoMedico.innerHTML = "";
     esValida = false;
     for (let i = 0; i < cuentasMedicos.length; i++) {
         cuenta = cuentasMedicos[i];
-		if (esLegajoInvalido(legajoMedico.value)){
-			return "El legajo y la contraseña son invalidos";
-		}
-        if (cuenta.legajo.localeCompare(legajoMedico.value) != 0){
-			return "No hay cuentas existentes asociadas al legajo ingresado";
-		}
-		if (cuenta.legajo.localeCompare(legajoMedico.value) == 0 && cuenta.password.localeCompare(passMedico.value) != 0){
-			return "La contraseña es invalida";
-		}
-		
+        if (esLegajoInvalido(legajoMedico.value)) {
+            return "El legajo y la contraseña son invalidos";
+        }
+        if (cuenta.legajo.localeCompare(legajoMedico.value) != 0) {
+            return "No hay cuentas existentes asociadas al legajo ingresado";
+        }
+        if (cuenta.legajo.localeCompare(legajoMedico.value) == 0 && cuenta.password.localeCompare(passMedico.value) != 0) {
+            return "La contraseña es invalida";
+        }
+
     }
     return warnings;
 };

@@ -21,10 +21,12 @@ const parrafo = document.getElementById("warnings");
 // campos del login de pacientes
 const usuarioPacienteLogin = document.getElementById("usuarioPaciente");
 const passPacienteLogin = document.getElementById("passwordPaciente");
+const parrafoPaciente = document.getElementById("warningsPaciente");
 
 // campos del login de medicos
 const legajoMedico = document.getElementById("legajoMedico");
 const passMedico = document.getElementById("passwordMedico");
+const parrafoMedico = document.getElementById("warningsMedico");
 
 // Botones para registrarse o loguearse
 const registroBtn = document.getElementById("registroBtn");
