@@ -30,7 +30,7 @@ crearCuentaPaciente = () => {
     });
 };
 
-crearCuentaPaciente = (user, mail, password) => {
+crearCuentaPaciente2 = (user, mail, password) => {
     //cambiando un poco los nombres para que no se parezcan a los del dom
     cuentasPacientes.push({
         usuario: user.toLowerCase(),

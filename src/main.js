@@ -1,4 +1,4 @@
-crearCuentaPaciente("Seltron", "chau@gmail.com", "1234567");
+crearCuentaPaciente2("Seltron", "chau@gmail.com", "1234567");
 
 crearCuentaMedico("123456789", "1234567");
 
@@ -9,6 +9,7 @@ form.addEventListener("submit", (e) => {
         parrafo.innerHTML = warnings;
     } else {
         crearCuentaPaciente();
+        console.log(cuentasPacientes)
         cambiarVisibilidad(registro_form, false); // guarda tambien lo resetea
     }
 });
