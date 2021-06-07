@@ -2,10 +2,10 @@ const cuentaPacienteValida = () => {
     let warnings = "";
     let validacionMail = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
     parrafo.innerHTML = "";
-    if (nombre.value.length < 2) {
+    if (nombre.value.length <= 2) {
         warnings += "El nombre no es valido <br>";
     }
-    if (apellido.value.length < 2) {
+    if (apellido.value.length <= 2) {
         warnings += "El apellido no es valido <br>";
     }
     if (usuario.value.length < 8) {
