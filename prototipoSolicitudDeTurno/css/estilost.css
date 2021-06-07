@@ -26,3 +26,8 @@ h2,h3,h4{
 	display: flex;
 	justify-content: space-between;
 }
+
+.event a {
+    background-color: #5FBA7D !important;
+    color: #ffffff !important;
+}

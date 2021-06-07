@@ -12,7 +12,7 @@ form.addEventListener("submit", (e) => {
         cambiarVisibilidad(registro_form, false); // guarda tambien lo resetea
     }
 });
-
+    
 loginPaciente_form.addEventListener("submit", (e) => {
     e.preventDefault();
     let warnings = accessoPacienteValido();
