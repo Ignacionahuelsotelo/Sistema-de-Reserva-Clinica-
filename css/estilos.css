@@ -149,4 +149,19 @@ button {
     position: absolute;
     z-index: 1;
     visibility: hidden;
+    height: 500px;
+}
+
+#mensajeMail{
+    border-radius: 5%;
+    width: 20rem;
+    height: 20rem;
+    background-color: aqua;
+    visibility: hidden;
+    z-index: 2;
+    flex-direction: column;
+    display: flex;
+    position: absolute;
+    justify-content: center;
+    align-items: center;
 }

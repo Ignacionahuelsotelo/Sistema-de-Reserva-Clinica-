@@ -32,3 +32,7 @@ const parrafoMedico = document.getElementById("warningsMedico");
 const registroBtn = document.getElementById("registroBtn");
 const loginMedicoBtn = document.getElementById("loginMedicoBtn");
 const loginPacienteBtn = document.getElementById("loginPacienteBtn");
+const restablecerContraseniaBtn = document.getElementById("restablecerPassBtn");
+
+const mensajeMail = document.getElementById("mensajeMail");
+const mailOk = document.getElementById("mailOk");

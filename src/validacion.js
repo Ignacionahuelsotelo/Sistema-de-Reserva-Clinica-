@@ -34,44 +34,75 @@ const accessoPacienteValido = () => {
     parrafoPaciente.innerHTML = "";
     esUsuarioValido = false;
     esContraseniaValida = false;
+    tieneMuchosIntentos = false;
     for (let i = 0; i < cuentasPacientes.length; i++) {
         cuenta = cuentasPacientes[i];
-        if (cuenta.usuario.localeCompare(usuarioPacienteLogin.value.toLowerCase()) == 0) {
+        if (
+            cuenta.usuario.localeCompare(
+                usuarioPacienteLogin.value.toLowerCase()
+            ) == 0
+        ) {
             esUsuarioValido = true;
-        }
-        if (cuenta.password.localeCompare(passPacienteLogin.value) == 0) {
-            esContraseniaValida = true;
-        }
-        if (!esUsuarioValido && !esContraseniaValida) {
-            return "El usuario y la contraseña son invalidos"
+            if (cuenta.password.localeCompare(passPacienteLogin.value) == 0) {
+                esContraseniaValida = true;
+            } else {
+                cuenta.intentos += 1;
+            }
+            if (cuenta.intentos > 5) {
+                tieneMuchosIntentos = true;
+            }
         }
         if (!esUsuarioValido) {
-            return "El usuario es invalido";
+            warnings = "El usuario es invalido";
         }
         if (!esContraseniaValida) {
-            return "La contraseña es invalida";
+            warnings = "La contraseña es invalida";
         }
+        if (!esUsuarioValido && !esContraseniaValida) {
+            warnings = "El usuario y la contraseña son invalidos";
+        }
+        if (tieneMuchosIntentos) {
+            warnings = "Cuenta bloqueada";
+        }
+        return warnings;
     }
-    return warnings;
 };
-
 
 const accessoMedicoValido = () => {
     let warnings = "";
     parrafoMedico.innerHTML = "";
     esValida = false;
+    esUsuarioValido = false;
+    esContraseniaValida = false;
+    tieneMuchosIntentos = false;
     for (let i = 0; i < cuentasMedicos.length; i++) {
         cuenta = cuentasMedicos[i];
-        if (esLegajoInvalido(legajoMedico.value)) {
-            return "El legajo y la contraseña son invalidos";
-        }
-        if (cuenta.legajo.localeCompare(legajoMedico.value) != 0) {
-            return "No hay cuentas existentes asociadas al legajo ingresado";
-        }
-        if (cuenta.legajo.localeCompare(legajoMedico.value) == 0 && cuenta.password.localeCompare(passMedico.value) != 0) {
-            return "La contraseña es invalida";
+        if (
+            cuenta.legajo.localeCompare(legajoMedico.value.toLowerCase()) == 0
+        ) {
+            esUsuarioValido = true;
+            if (cuenta.password.localeCompare(passMedico.value) == 0) {
+                esContraseniaValida = true;
+            } else {
+                cuenta.intentos += 1;
+            }
+            if (cuenta.intentos > 5) {
+                tieneMuchosIntentos = true;
+            }
         }
 
+        if (!esUsuarioValido) {
+            warnings = "El usuario es invalido";
+        }
+        if (!esContraseniaValida) {
+            warnings = "La contraseña es invalida";
+        }
+        if (!esUsuarioValido && !esContraseniaValida) {
+            warnings = "El usuario y la contraseña son invalidos";
+        }
+        if (tieneMuchosIntentos) {
+            warnings = "Cuenta bloqueada";
+        }
+        return warnings;
     }
-    return warnings;
 };

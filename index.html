@@ -15,6 +15,7 @@
         <button id='loginPacienteBtn' class="mainBtn">Ingreso Paciente</button>
         <button id='loginMedicoBtn' class="mainBtn">Ingreso Médicos</button>
         <button id="registroBtn" class="mainBtn">Registro</button>
+       
     </div>
 
     <form action="" method="POST" id="form">
@@ -119,10 +120,19 @@
                 <label for="">Contraseña</label>
             </div>
 
-            <button type="submit"> Login</button>
+            <div class="grupo"> 
+                <button type="submit"> Login</button>
+                <button id="restablecerPassBtn" class="mainBtn">Restablecer Contraseña</button>
+            </div>
+            
             <p class="warnings" id="warningsPaciente"></p>
         </div>
     </form>
+
+    <div id="mensajeMail">
+        <p id="mensajeMailParrafo">El mail con su contraseña ha sido enviado</p>
+        <button id="mailOk">OK</button>
+    </div>
 
     <script src="src/doms.js"></script>
     <script src="src/auxiliares.js"></script>

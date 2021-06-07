@@ -27,6 +27,7 @@ crearCuentaPaciente = () => {
         medioDePago: medioDePago,
         nroCuenta: nroCuenta.value,
         password: pass.value,
+        intentos: 0,
     });
 };
 
@@ -36,6 +37,7 @@ crearCuentaPaciente2 = (user, mail, password) => {
         usuario: user.toLowerCase(),
         mail: mail,
         password: password,
+        intentos: 0,
     });
 };
 
@@ -44,6 +46,7 @@ crearCuentaMedico = (legajo, password) => {
     cuentasMedicos.push({
         legajo: legajo,
         password: password,
+        intentos: 0,
     });
 };
 
@@ -57,10 +60,18 @@ cambiarVisibilidad = (formulario, visible) => {
     }
 };
 
+cambiarVisibilidadDOM = (dom, visible) => {
+    if (visible) {
+        dom.style.visibility = "initial";
+    } else {
+        dom.style.visibility = "hidden";
+    }
+};
+
 const existeUsuario = (user) => {
-    existe = false;
-    for (cuenta in cuentasPacientes) {
-        if (cuenta.usuario == user.toLowerCase) {
+    for (let i = 0; i < cuentasPacientes.length; i++) {
+        cuenta = cuentasPacientes[i];
+        if (cuenta.usuario == user.toLowerCase()) {
             return true;
         }
     }

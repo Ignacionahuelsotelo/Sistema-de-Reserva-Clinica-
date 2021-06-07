@@ -20,7 +20,6 @@ loginPaciente_form.addEventListener("submit", (e) => {
         parrafoPaciente.innerHTML = warnings;
     } else {
         window.alert("Ingreso exitoso");
-        window.location.href= "prototipoSolicitudDeTurno/solicitarturnos2.html"
         // crearCuentaPaciente();
         // cambiarVisibilidad(registro_form, false); // guarda tambien lo resetea
     }
@@ -33,7 +32,6 @@ loginMedico_form.addEventListener("submit", (e) => {
         parrafoMedico.innerHTML = warnings;
     } else {
         window.alert("Ingreso exitoso");
-        window.location.href= "prototipoSolicitudDeTurno/solicitarturnos2.html"
     }
 });
 
@@ -53,4 +51,11 @@ registroBtn.addEventListener("click", (e) => {
     cambiarVisibilidad(registro_form, true);
     cambiarVisibilidad(loginMedico_form, false);
     cambiarVisibilidad(loginPaciente_form, false);
+});
+
+restablecerContraseniaBtn.addEventListener("click", (e) => {
+    cambiarVisibilidadDOM(mensajeMail, true);
+});
+mailOk.addEventListener("click", (e) => {
+    cambiarVisibilidadDOM(mensajeMail, false);
 });
