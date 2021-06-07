@@ -53,11 +53,12 @@
 				</div>
 				<div class="contenedor">
 				<h4 class= seleccionarHorario> Seleccione horario: 
-				<form action="" name="formulario">
-					<input type="time" name="hora" value="00:00" max="18:00" min="08:00" step="600">
+				<form action="" name="formulario" id = "form">
+					<input type="time" name="hora" value="00:00" max="18:00" min="08:00" step="600" id="hora">
 				</h4>
+				<p class="warnings" id="warningsFecha"></p>
 				</div>
-				<button type="submit"> Confirmar turno </button>
+				<button type="submit" id="botonConfirmar"> Confirmar turno </button>
 				</form>
 
 				<script src="js/doms.js"></script>
