@@ -85,7 +85,7 @@ var arregloTest;
 		for ( let i = 0; i < arregloTest.length;i++){
 			for ( let j = 0; j < horariosDisponibles.length;j++){
 				if (arregloTest[i].getTime() == fechaElegida){
-					if (horariosDisponibles[j] == horaElegida){
+					if (horariosDisponibles[j] == horaElegida && i == j){
 						parrafoSubmit.innerHTML = "Turno solicitado exitosamente"
 					}
 				}
