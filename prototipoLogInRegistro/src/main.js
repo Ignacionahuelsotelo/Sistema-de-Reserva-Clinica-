@@ -33,7 +33,7 @@ loginMedico_form.addEventListener("submit", (e) => {
         parrafoMedico.innerHTML = warnings;
     } else {
         window.alert("Ingreso exitoso");
-        window.location.href = "solicitarturnos2.html"
+        window.location.href = "../solicitarturnos2.html"
     }
 });
 
