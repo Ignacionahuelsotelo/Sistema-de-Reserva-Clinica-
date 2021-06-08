@@ -91,7 +91,7 @@ boton.addEventListener("click", function (evento) {
             }
         }
     }
-    if (fechaElegida == undefined || horaElegida == undefined || especialidadElegida == "value1"){
+    if (fechaElegida == undefined || horaElegida == undefined || especialidadElegida == "value1" || especialidadElegida == undefined){
         console.log(fechaElegida+"1")
         console.log(horaElegida +"2")
         console.log(especialidadElegida +" 3")
@@ -99,6 +99,7 @@ boton.addEventListener("click", function (evento) {
     }
     else{
         if (turnoExitoso) {
+        
             parrafoSubmit.innerHTML = "Turno solicitado exitosamente";
             
         } else {
