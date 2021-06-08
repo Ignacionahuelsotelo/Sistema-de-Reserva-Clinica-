@@ -2,6 +2,7 @@ var fechaElegida;
 var horaElegida;
 var horariosDisponibles;
 var arregloTest;
+var especialidadElegida;
 
 $(function () {
     // An array of dates
@@ -56,7 +57,12 @@ $(function () {
         },
     });
 });
-
+especialidad.addEventListener(
+    "input", function(){
+    especialidadElegida = especialidad.value
+    },
+    false
+)
 hora.addEventListener(
     "input",
     function () {
@@ -72,8 +78,7 @@ const boton = document.querySelector("#botonConfirmar");
 boton.addEventListener("click", function (evento) {
     evento.preventDefault();
 
-    console.log(fechaElegida);
-    console.log(horaElegida);
+    
     parrafoSubmit.innerHTML = " ";
 
     let turnoExitoso = false;
@@ -86,9 +91,19 @@ boton.addEventListener("click", function (evento) {
             }
         }
     }
-    if (turnoExitoso) {
-        parrafoSubmit.innerHTML = "Turno solicitado exitosamente";
-    } else {
-        parrafoSubmit.innerHTML = "Horario no disponible";
+    if (fechaElegida == undefined || horaElegida == undefined || especialidadElegida == "value1"){
+        console.log(fechaElegida+"1")
+        console.log(horaElegida +"2")
+        console.log(especialidadElegida +" 3")
+        parrafoSubmit.innerHTML = "Completar todos los campos"
     }
+    else{
+        if (turnoExitoso) {
+            parrafoSubmit.innerHTML = "Turno solicitado exitosamente";
+            
+        } else {
+            parrafoSubmit.innerHTML = "Horario no disponible";
+        }
+    }
+    
 });
