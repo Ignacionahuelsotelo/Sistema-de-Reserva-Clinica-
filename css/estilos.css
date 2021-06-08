@@ -155,6 +155,7 @@ button {
     text-decoration: none;
     font-style: normal;
     font-variant: normal;
+    color: blue;
 }
 
 #loginMedicoForm,
